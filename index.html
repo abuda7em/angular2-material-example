@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <title>Angular2 Material Example</title>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- 1. Load libraries -->
+    <!-- IE required polyfills, in this exact order -->
+    <base href="./">
+    <link rel="stylesheet" type="text/css" href="css/style.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body dir="ltr" style="margin:0px;overflow:hidden">
+    <my-app>Loading...</my-app>
+
+    <script src="node_modules/es6-shim/es6-shim.js" ></script>
+    <script src="node_modules/systemjs/dist/system-polyfills.js" ></script>
+    <script src="node_modules/angular2/bundles/angular2-polyfills.min.js" ></script>
+    <script src="node_modules/systemjs/dist/system.js" ></script>
+    <script src="node_modules/typescript/lib/typescript.js" ></script>
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.dev.js" ></script>
+    <script src="node_modules/angular2/bundles/http.dev.js" ></script>
+    <script src="node_modules/angular2/bundles/router.dev.js" ></script>
+
+    </script>
+    <script>
+
+      System.config({
+        map:{
+          '@angular2-material/checkbox':'node_modules/@angular2-material/checkbox',
+          "@angular2-material/button": 'node_modules/@angular2-material/button',
+          "@angular2-material/card":'node_modules/@angular2-material/card',
+          "@angular2-material/core":'node_modules/@angular2-material/core',
+          "@angular2-material/input":'node_modules/@angular2-material/input',
+          "@angular2-material/list":'node_modules/@angular2-material/list',
+          "@angular2-material/progress-circle":'node_modules/@angular2-material/progress-circle',
+          "@angular2-material/radio":'node_modules/@angular2-material/radio',
+          "@angular2-material/sidenav":'node_modules/@angular2-material/sidenav',
+          "@angular2-material/toolbar":'node_modules/@angular2-material/toolbar'
+        },
+        packages: {
+          '@angular2-material/checkbox': {
+            format: 'cjs',
+            defaultExtension: 'js',
+            main: 'checkbox.js'
+          },
+          '@angular2-material/core': {
+            format: 'cjs',
+            defaultExtension: 'js',
+            main: 'core.js'
+          },
+          app: {
+            format: 'register',
+            defaultExtension: 'js'
+          }
+        }
+      });
+      System.import('app/boot').then(null, console.error.bind(console));
+    </script>
+  </body>
+</html>
+
